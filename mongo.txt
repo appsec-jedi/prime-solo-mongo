@@ -1,36 +1,36 @@
 //Create a collection named orders.
   db.createCollection('orders')
 //Insert at least 3 documents that represent an order. IMPORTANT: See section below for fields.
-  db.upsilon.insert({
+  db.orders.insert({
     orderDate : Date(),
     orderTotal : 100.00,
   ..lineItems : [
   ... ... {unitPrice: 3.00, quantity: 10, productName: 'chocolate'},
   ... ... ]
   ... })
-  db.upsilon.insert({
+  db.orders.insert({
     orderDate : Date(),
     orderTotal : 90.00,
   ..lineItems : [
   ... ... {unitPrice: 4.00, quantity: 13, productName: 'coffee'},
   ... ... ]
   ... })
-  db.upsilon.insert({ orderDate : Date(), orderTotal : 75.00,
+  db.orders.insert({ orderDate : Date(), orderTotal : 75.00,
   ... ... lineItems : [
   ... ... {unitPrice: 5.00, quantity: 23, productName: 'chips'},
   ... ... ]
   ... })
 //Find a single order document, any order document.
-  db.upsilon.find({ orderTotal : 75.00})
+  db.orders.find({ orderTotal : 75.00})
 //Find all orders and make them look pretty.
-  db.upsilon.find().pretty()
+  db.orders.find().pretty()
 //Find all orders with an orderDate that is prior to 1/1/2016.
-  db.upsilon.find({ orderDate : {$lt: "2016-01-01" }}).pretty()
+  db.orders.find({ orderDate : {$lt: "2016-01-01" }}).pretty()
 //Find all orders with an orderDate that is after 1/1/2016.
-  db.upsilon.find({ orderDate : {$gte: "2016-01-01" }}).pretty()
+  db.orders.find({ orderDate : {$gte: "2016-01-01" }}).pretty()
 //Find orders with lineItems that have a quantity that is less than 50, but greater than 5. HINT: Look at $and and dot notation.
-  db.upsilon.find({$and : [{"lineItems.quantity": {$lt: 50}}, {"lineItems.quantity": {$gt: 5}}]}).pretty()
+  db.orders.find({$and : [{"lineItems.quantity": {$lt: 50}}, {"lineItems.quantity": {$gt: 5}}]}).pretty()
 //Update one of your line items to 42.99. HINT: Look at dot notation
-  db.upsilon.update({_id: ObjectId("589a1e99692f8f268229442b")},{$set: { "lineItems.0.unitPrice" : 42.99}})
+  db.orders.update({_id: ObjectId("589a1e99692f8f268229442b")},{$set: { "lineItems.0.unitPrice" : 42.99}})
 //Remove one of your orders.
-  db.upsilon.remove({ _id: ObjectId("589a1e99692f8f268229442b")})
+  db.orders.remove({ _id: ObjectId("589a1e99692f8f268229442b")})

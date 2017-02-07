@@ -5,19 +5,19 @@
     orderDate : Date(),
     orderTotal : 100.00,
   ..lineItems : [
-  ... ... {unitPrice: 3.00, quantity: 10, productName: 'chocolate'},
+  ... ... {unitPrice: 3.00, quantity: 10, productName: 'chocolate'}
   ... ... ]
   ... })
   db.orders.insert({
     orderDate : Date(),
     orderTotal : 90.00,
   ..lineItems : [
-  ... ... {unitPrice: 4.00, quantity: 13, productName: 'coffee'},
+  ... ... {unitPrice: 4.00, quantity: 13, productName: 'coffee'}
   ... ... ]
   ... })
   db.orders.insert({ orderDate : Date(), orderTotal : 75.00,
   ... ... lineItems : [
-  ... ... {unitPrice: 5.00, quantity: 23, productName: 'chips'},
+  ... ... {unitPrice: 5.00, quantity: 23, productName: 'chips'}
   ... ... ]
   ... })
 //Find a single order document, any order document.
